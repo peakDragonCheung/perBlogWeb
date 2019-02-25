@@ -28,6 +28,11 @@ export default new Router({
           component: () => import("@/views/home/articleDetail.vue")
         }
       ]
+    },
+    {
+      path: "/resume",
+      name: "resume",
+      component: () => import("@/views/resume")
     }
   ]
 });
