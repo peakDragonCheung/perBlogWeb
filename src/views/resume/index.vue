@@ -1,21 +1,66 @@
 <template>
   <div class="resume_content">
     <div ref="resBlock" class="currentBlock">
-      <div class="resume_firstBlock">首页</div>
-      <div class="resume_secondBlock">第二屏</div>
-      <div class="resume_thirdBlock">第三屏</div>
-      <div class="resume_fourthBlock">第四屏</div>
-      <div class="resume_fifthBlock">第五屏</div>
-      <div class="resume_sixthBlock">第六屏</div>
-    </div>
-    <div class="controlButtonBox">
-      <button @click="turnMove(--index)">上一页</button>
-      <button @click="turnMove(++index)">下一页</button>
+      <div class="resume_commons resume_firstBlock">
+        <div>
+          <div>我的头像啊</div>
+          <div>
+            <p>生活不止眼前的苟且，还有诗和远方！</p>
+            <p>我叫张龙峰</p>
+            <p>一个萌新前端开发</p>
+            <p>1241863562@qq.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="resume_commons resume_secondBlock">
+        <p>关于我</p>
+        <div class="flex">
+          <nav>
+            <a href>年龄/24岁</a>
+            <a href>学历/本科</a>
+            <a href>坐标/南京</a>
+            <a href>状态/在职</a>
+          </nav>
+          <div>
+            <p>一年前端开发工作经验</p>
+            <p>喜欢写代码，也喜欢看别人的代码</p>
+            <p>高效的自学能力，热衷于独立解决问题</p>
+            <p>一个想要全栈发展的小程序猿</p>
+          </div>
+        </div>
+      </div>
+      <div class="resume_commons resume_thirdBlock">
+        <p>经历</p>
+        <div>
+          <div>这里写一个树形组件实现时间轴展示自己的工作公司</div>
+        </div>
+      </div>
+      <div class="resume_commons resume_fourthBlock">
+        <p>专业能力</p>
+        <div>
+          <span>js</span>
+          <span>html</span>
+          <span>css</span>
+          <span>vue</span>
+        </div>
+      </div>
+      <div class="resume_commons resume_fifthBlock">
+        <p>项目经验</p>
+      </div>
+      <div class="resume_commons resume_sixthBlock">联系我</div>
     </div>
     <div class="right_buttons">
-      <i v-for="(item, index) in rightButtonArray" @click="turnMove(index)" :key="index">
+      <i
+        v-for="(item, index) in rightButtonArray"
+        @click="turnMove(index)"
+        :key="index"
+        :class="{scale_icon: index === focusIndex}"
+      >
         <Icon :type="item.icon"/>
       </i>
+    </div>
+    <div class="resume_circle">
+      <i class="resume_outer_circle"></i>
     </div>
   </div>
 </template>
@@ -61,13 +106,14 @@ export default {
     turnMove(index) {
       // 上一页
       if (index < 0) {
-        this.index++;
+        this.focusIndex++;
         return;
       }
-      if (this.index > 5) {
-        this.index--;
+      if (this.focusIndex > 5) {
+        this.focusIndex--;
         return;
       }
+      this.focusIndex = index;
       this.$refs.resBlock.style.transform = `translateY(-${index}00%)`;
     },
     scrollFunc(event) {
@@ -84,17 +130,17 @@ export default {
         //IE/Opera/Chrome
         //自定义事件：编写具体的实现逻辑
         if (event.wheelDelta > 0) {
-          this.turnMove(--this.index);
+          this.turnMove(--this.focusIndex);
         } else {
-          this.turnMove(++this.index);
+          this.turnMove(++this.focusIndex);
         }
       } else if (event.detail) {
         //Firefox
         //自定义事件：编写具体的实现逻辑
-        if (e.detail > 0) {
-          this.turnMove(--this.index);
+        if (event.detail > 0) {
+          this.turnMove(--this.focusIndex);
         } else {
-          this.turnMove(++this.index);
+          this.turnMove(++this.focusIndex);
         }
       }
     }
@@ -105,35 +151,28 @@ export default {
 .resume_content {
   height: 100%;
   overflow: hidden;
-  .resume_firstBlock {
-    background: rgb(131, 175, 155);
+  .resume_commons {
     height: 100%;
     width: 100%;
+    display: inline-block;
+  }
+  .resume_firstBlock {
+    background: rgb(131, 175, 155);
   }
   .resume_secondBlock {
     background: rgb(200, 200, 169);
-    height: 100%;
-    width: 100%;
   }
   .resume_thirdBlock {
     background: rgb(249, 205, 173);
-    height: 100%;
-    width: 100%;
   }
   .resume_fourthBlock {
     background: rgb(252, 200, 169);
-    height: 100%;
-    width: 100%;
   }
   .resume_fifthBlock {
     background: rgb(201, 186, 131);
-    height: 100%;
-    width: 100%;
   }
   .resume_sixthBlock {
     background: #f4d03f;
-    height: 100%;
-    width: 100%;
   }
   .currentBlock {
     transition: all 1s;
@@ -142,13 +181,13 @@ export default {
   }
   .controlButtonBox {
     position: absolute;
-    top: 50px;
+    top: 200px;
   }
   .right_buttons {
     position: absolute;
     display: flex;
-    top: 40%;
-    left: 95%;
+    top: 30%;
+    right: 3%;
     flex-direction: column;
     i {
       cursor: pointer;
@@ -157,6 +196,45 @@ export default {
     }
     i:hover {
       transform: scale(1.2);
+    }
+    .scale_icon {
+      transform: scale(1.5);
+    }
+  }
+  .resume_circle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  .resume_outer_circle {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    animation: forwardTurn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background: url("../../assets/resume_logo.jpg");
+    background-size: 4rem 4rem;
+    background-repeat: no-repeat;
+    background-position: -0.4rem -0.5rem;
+  }
+  @keyframes forwardTurn {
+    0% {
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg); /* IE 9 */
+      -moz-transform: rotate(0deg); /* Firefox */
+      -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+      -o-transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      -ms-transform: rotate(360deg); /* IE 9 */
+      -moz-transform: rotate(360deg); /* Firefox */
+      -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+      -o-transform: rotate(360deg);
     }
   }
 }
