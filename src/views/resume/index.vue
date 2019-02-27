@@ -2,26 +2,41 @@
   <div class="resume_content">
     <div ref="resBlock" class="currentBlock">
       <div class="resume_commons resume_firstBlock">
-        <div>
-          <div>我的头像啊</div>
-          <div>
-            <p>生活不止眼前的苟且，还有诗和远方！</p>
-            <p>我叫张龙峰</p>
-            <p>一个萌新前端开发</p>
-            <p>1241863562@qq.com</p>
-          </div>
+        <div class="myHead_img"></div>
+        <div class="resume_firstBlock_introduction">
+          <p>你才25岁，你可以成为任何你想要成为的人。</p>
+          <span class="resume_hr"></span>
+          <p>我叫张龙峰</p>
+          <p>一个萌新前端开发</p>
+          <p>zlf14084@163.com</p>
         </div>
       </div>
       <div class="resume_commons resume_secondBlock">
-        <p>关于我</p>
-        <div class="flex">
-          <nav>
-            <a href>年龄/24岁</a>
-            <a href>学历/本科</a>
-            <a href>坐标/南京</a>
-            <a href>状态/在职</a>
+        <p class="resume_Block_title">关于我</p>
+        <div>
+          <nav class="resume_secondBlock_nav">
+            <a href="#">
+              <div class="resume_secondBlock_outIcon">
+                <Icon type="ios-medical"/>
+              </div>年龄/24岁
+            </a>
+            <a href="#">
+              <div class="resume_secondBlock_outIcon">
+                <Icon type="md-locate"/>
+              </div>学历/本科
+            </a>
+            <a href="#">
+              <div class="resume_secondBlock_outIcon">
+                <Icon type="md-compass"/>
+              </div>坐标/南京
+            </a>
+            <a href="#">
+              <div class="resume_secondBlock_outIcon">
+                <Icon type="md-cog"/>
+              </div>状态/在职
+            </a>
           </nav>
-          <div>
+          <div class="resume_secondBlock_bottom">
             <p>一年前端开发工作经验</p>
             <p>喜欢写代码，也喜欢看别人的代码</p>
             <p>高效的自学能力，热衷于独立解决问题</p>
@@ -30,13 +45,15 @@
         </div>
       </div>
       <div class="resume_commons resume_thirdBlock">
-        <p>经历</p>
-        <div>
-          <div>这里写一个树形组件实现时间轴展示自己的工作公司</div>
+        <p class="resume_Block_title">经历</p>
+        <div class="resume_thirdBlock_content">
+          <div>
+            
+            </div>
         </div>
       </div>
       <div class="resume_commons resume_fourthBlock">
-        <p>专业能力</p>
+        <p class="resume_Block_title">专业能力</p>
         <div>
           <span>js</span>
           <span>html</span>
@@ -45,9 +62,11 @@
         </div>
       </div>
       <div class="resume_commons resume_fifthBlock">
-        <p>项目经验</p>
+        <p class="resume_Block_title">项目经验</p>
       </div>
-      <div class="resume_commons resume_sixthBlock">联系我</div>
+      <div class="resume_commons resume_sixthBlock">
+        <p class="resume_Block_title">联系我</p>
+      </div>
     </div>
     <div class="right_buttons">
       <i
@@ -236,6 +255,91 @@ export default {
       -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
       -o-transform: rotate(360deg);
     }
+  }
+  .myHead_img {
+    margin: 10% auto;
+    margin-bottom: 0;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-image: url("../../assets/resume.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .resume_firstBlock_introduction {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    p {
+      color: white;
+      margin-bottom: 1rem;
+    }
+  }
+  .resume_firstBlock_introduction :nth-child(1) {
+    font-size: 1.5rem;
+  }
+  .resume_firstBlock_introduction :nth-child(2) {
+    margin-top: 2rem;
+  }
+  .resume_hr {
+    height: 1px;
+    max-width: 90%;
+    display: inherit;
+  }
+  .resume_Block_title {
+    margin: 10% auto;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.3rem;
+  }
+  .resume_secondBlock_nav {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    a {
+      color: white;
+      display: inline-block;
+      font-size: 1rem;
+    }
+    .resume_secondBlock_outIcon {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 2px white solid;
+      font-size: 3.2rem;
+      line-height: 4.25rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      padding-left: 1px;
+    }
+    .resume_secondBlock_outIcon:hover {
+      color: rgb(200, 200, 169);
+      background: white;
+      animation: rotate;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .resume_secondBlock_bottom {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+  }
+  .resume_thirdBlock_content {
+    width: 50%;
+    margin: 0 auto;
   }
 }
 </style>
