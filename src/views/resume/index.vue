@@ -108,10 +108,50 @@
         </div>
       </div>
       <div class="resume_commons resume_fifthBlock">
-        <p class="resume_Block_title">项目经验</p>
+        <p class="resume_Block_title">作品</p>
+        <p class="resume_Block_fifth_content">没有什么大作品啊！只有一些小demo，后续会完成个人博客项目啊！</p>
+        <div class="resume_fifthBlock_content">
+          <a href="https://peakdragoncheung.github.io/VueTest/购物车/demo.html" target="_blank">
+            <div class="resume_fifthBlock_demo bug_demo">购物车demo</div>
+          </a>
+          <a href="https://peakdragoncheung.github.io/VueTest/分散背景图demo/index.html" target="_blank">
+            <div class="resume_fifthBlock_demo flyDemo">碎片图片飞入动画</div>
+          </a>
+        </div>
       </div>
       <div class="resume_commons resume_sixthBlock">
         <p class="resume_Block_title">联系我</p>
+        <p>
+          让我加入你，我们一起成长，风雨与共
+        </p>
+        <div class="resume_sixthBlock_contactMe">
+          <Poptip trigger="hover" content="github">
+            <a class="contack_link" href="https://github.com/peakDragonCheung">
+              <img src="../../assets/github.png" alt>
+            </a>
+          </Poptip>
+          <Poptip trigger="hover">
+            <a class="contack_link">
+              <img src="../../assets/QQ.png">
+            </a>
+            <div class="api" slot="content">
+              <img src="../../assets/qq_contact.jpg" alt srcset>
+            </div>
+          </Poptip>
+          <Poptip trigger="hover" content="github">
+            <a class="contack_link">
+              <img src="../../assets/wechart.png">
+            </a>
+            <div class="api" slot="content">
+              <img src="../../assets/weixin_contact.jpg" alt srcset>
+            </div>
+          </Poptip>
+          <Poptip trigger="hover" content="掘金">
+            <a class="contack_link" href="https://juejin.im/user/5b39011e6fb9a00e503148f4">
+              <img src="../../assets/juejin.png">
+            </a>
+          </Poptip>
+        </div>
       </div>
     </div>
     <div class="right_buttons">
@@ -360,6 +400,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
+    font-size: 1.2rem;
     p {
       color: white;
       margin-bottom: 1rem;
@@ -387,7 +428,7 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
     a {
       color: white;
@@ -450,6 +491,7 @@ export default {
       text-align: center;
       line-height: 200px;
       color: white;
+      font-size: 2rem;
     }
     li:nth-of-type(2) {
       background: rgba(131, 175, 155, 0.5);
@@ -561,6 +603,14 @@ export default {
     display: flex;
     flex-direction: column;
   }
+  // .resume_thirdBlock_Tv_control::after {
+  //   content: "";
+  //   position: absolute;
+  //   display: inline-block;
+  //   width: 4.5rem;
+  //   height: 0.5rem;
+  //   background: black
+  // }
   .resume_control_buttom {
     display: inline-block;
     border: 5px solid black;
@@ -584,6 +634,7 @@ export default {
     display: inline-block;
     border: 5px solid black;
     width: 90%;
+    background: black;
     border-radius: 5px;
     margin-left: 0.3rem;
     margin-bottom: 0.3rem;
@@ -638,6 +689,56 @@ export default {
       width: 100%;
       padding: 0.5rem;
     }
+  }
+  .resume_sixthBlock_contactMe {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+  .contack_link {
+    margin: 0 1rem;
+  }
+  .resume_fifthBlock_content {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
+  .resume_fifthBlock_demo {
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-size: cover;
+    text-align: center;
+    line-height: 10rem;
+    color: #ffffff82;
+    cursor: pointer;
+    transition: all 2s;
+  }
+  .bug_demo {
+    background-image: url("../../assets/bug.png");
+  }
+  .bug_demo:hover {
+    color: #f4d03f;
+    transform: scale(1.3);
+  }
+  .flyDemo:hover {
+    color: #f4d03f;
+    transform: scale(1.3);
+  }
+  .flyDemo {
+    background-image: url("../../assets/fly.png");
+  }
+  .resume_Block_fifth_content{
+    color: white;
+    font-size: 1rem;
   }
 }
 </style>
