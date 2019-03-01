@@ -583,7 +583,7 @@ export default {
   .resume_control_hole {
     display: inline-block;
     border: 5px solid black;
-    width: 4.5rem;
+    width: 90%;
     border-radius: 5px;
     margin-left: 0.3rem;
     margin-bottom: 0.3rem;
@@ -631,9 +631,12 @@ export default {
   .resume_exprence_contentBox {
     display: flex;
     transition: all 0.5s;
+    width: 100%;
     div {
       flex-shrink: 0;
       width: 26rem;
+      width: 100%;
+      padding: 0.5rem;
     }
   }
 }
