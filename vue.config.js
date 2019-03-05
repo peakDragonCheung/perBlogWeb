@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: './',
+  baseUrl: '/',
   css: {
     loaderOptions: {
       // 向 CSS 相关的 loader 传递选项

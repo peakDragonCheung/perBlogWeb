@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <mavon-editor v-model="value" defaultOpen="preview" :toolbarsFlag="false" :subfield="false" :boxShadow="false"/> -->
-    <mavon-editor v-model="value"/>
+    <mavon-editor v-model="value" defaultOpen="preview" :toolbarsFlag="false" :subfield="false" :boxShadow="false"/>
+    <!-- <mavon-editor v-model="value"/> -->
     <div></div>
   </div>
 </template>

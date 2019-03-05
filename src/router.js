@@ -33,6 +33,12 @@ export default new Router({
       path: "/resume",
       name: "resume",
       component: () => import("@/views/resume")
+    },
+    // 管理端的路由
+    {
+      path: "/administer",
+      name: "administer",
+      component: () => import("@/views/resume")
     }
   ]
 });
