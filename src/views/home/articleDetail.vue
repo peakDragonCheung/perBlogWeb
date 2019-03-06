@@ -12,7 +12,10 @@ export default {
       value: "# 这个是一个标题  <br>``` var oject = { name:'' } ```"
     };
   },
-  methods: {}
+  methods: {},
+  created() {
+    this.value = this.$route.params.article.content;
+  }
 };
 </script>
 <style lang="less" scoped>

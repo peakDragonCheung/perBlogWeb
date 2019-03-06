@@ -14,3 +14,10 @@ export function getArticles(data) {
     data
   });
 }
+export function insertArticles(data) {
+  return request({
+    url: "/insertArticle",
+    method: "post",
+    data
+  });
+}

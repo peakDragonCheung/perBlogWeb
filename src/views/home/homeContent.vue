@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="article_boxs">
-      <div class="article_box" v-for="item in articles" :key="item.id" @click="seeDetail">
+      <div class="article_box" v-for="item in articles" :key="item.id" @click="seeDetail(item)">
         <div style="font-size: 0;">
           <img src="../../assets/bg.jpg" width="100px" height="100px" alt>
         </div>
@@ -52,8 +52,13 @@ export default {
       });
     },
     // 查看详情
-    seeDetail() {
-      this.$router.push("/home/articleDetail");
+    seeDetail(item) {
+      this.$router.push({
+        name: "articleDetail",
+        params: {
+          article: item
+        }
+      });
     }
   }
 };

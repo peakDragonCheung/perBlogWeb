@@ -38,7 +38,14 @@ export default new Router({
     {
       path: "/administer",
       name: "administer",
-      component: () => import("@/views/resume")
+      component: () => import("@/views/administer"),
+      children: [
+        {
+          path: "addArticle",
+          name: "addArticle",
+          component: () => import("@/views/administer/articleMange/addArticle")
+        }
+      ]
     }
   ]
 });
