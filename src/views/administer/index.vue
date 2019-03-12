@@ -34,7 +34,7 @@
                 <Icon type="ios-navigate"></Icon>管理博客
               </template>
               <MenuItem name="addArticle">新增博客</MenuItem>
-              <MenuItem name="myBlogs">查看博客</MenuItem>
+              <MenuItem name="articleList">查看博客</MenuItem>
               <MenuItem name="1-3">Option 3</MenuItem>
             </Submenu>
             <Submenu name="2">
@@ -70,7 +70,8 @@ export default {
     return {
       content: "",
       routerObject: {
-        addArticle: "/administer/addArticle"
+        addArticle: "/administer/addArticle",
+        articleList: "/administer/articleList"
       }
     };
   },
