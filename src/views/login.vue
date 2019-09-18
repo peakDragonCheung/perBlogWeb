@@ -1,15 +1,15 @@
 <template>
   <div class="qq_music_home">
     <div class="music_login">
-      <p>登录后，你会觉得仅此而已，</p>
-      <p>但，请勿止步与此！</p>
+      <p>张龙峰的个人网站！</p>
+      <p>暂时用作托管线上简历</p>
       <Button
         type="primary"
         @click="moveUpBotton"
         class="login_start_botton"
         long
         :class="{start_up_move: isMove }"
-      >开始吧</Button>
+      >简历</Button>
       <Button
         type="primary"
         @click="login"
@@ -45,10 +45,11 @@ export default {
   },
   methods: {
     moveUpBotton() {
-      if (!this.isMove) {
-        this.isMove = true;
-        this.isMoveCover = false;
-      }
+      // if (!this.isMove) {
+      //   this.isMove = true;
+      //   this.isMoveCover = false;
+      // }
+      this.$router.push('/resume');
     },
     closeBottonClass() {
       this.isMove = false;

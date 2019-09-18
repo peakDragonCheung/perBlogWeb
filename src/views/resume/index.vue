@@ -37,7 +37,7 @@
             </a>
           </nav>
           <div class="resume_secondBlock_bottom">
-            <p>一年前端开发工作经验</p>
+            <p>一年半前端开发工作经验</p>
             <p>喜欢写代码，也喜欢看别人的代码</p>
             <p>高效的自学能力，热衷于独立解决问题</p>
             <p>一个想要全栈发展的小程序猿</p>
@@ -95,15 +95,15 @@
             <li>css</li>
             <li>vue</li>
             <li>node.js</li>
-            <li>webpack</li>
+            <li>react</li>
           </ul>
           <div class="resume_secondBlock_bottom">
             <p>熟练掌握JavaScript语言，闭包，原型链，等，并了解es6及以上的一些新特性。</p>
             <p>熟练HTML5与CSS3、DIV+CSS网页布局样式。</p>
             <p>熟练掌握vue,框架以及其全家桶。</p>
             <p>熟悉一些ui库，如element , iview。</p>
-            <p>熟悉git ,svn的基本操作。</p>
-            <p>了解一点Webpack自动化构建工具。</p>
+            <p>了解基本git ,svn的基本操作。</p>
+            <p>了解react的基本用法以及ant-deign 和 ant-deign-pro。</p>
           </div>
         </div>
       </div>
@@ -117,6 +117,9 @@
           <a href="https://peakdragoncheung.github.io/VueTest/分散背景图demo/index.html" target="_blank">
             <div class="resume_fifthBlock_demo flyDemo">碎片图片飞入动画</div>
           </a>
+          <a href="https://peakdragoncheung.github.io/VueTest/%E4%BA%94%E5%BD%A9%E5%B0%8F%E7%90%83%E8%90%BD%E4%B8%8B%E6%95%88%E6%9E%9C/ball.html" target="_blank">
+            <div class="resume_fifthBlock_demo ballFlay">五彩小球倒计时</div>
+          </a>
         </div>
       </div>
       <div class="resume_commons resume_sixthBlock">
@@ -124,6 +127,7 @@
         <p>
           让我加入你，我们一起成长，风雨与共
         </p>
+        <br>
         <div class="resume_sixthBlock_contactMe">
           <Poptip trigger="hover" content="github">
             <a class="contack_link" href="https://github.com/peakDragonCheung">
@@ -214,9 +218,15 @@ export default {
         },
         {
           title: "在南京信晨汇公司任职前端开发",
-          time: "2018.9-至今",
+          time: "2018.9-2019-5",
           content:
             "在这一家公司，我学习的基础得到了有效的训练，也就是警察情报系统系统，一开始我只是负责简单的模块，后来可能越写越上手后来就慢慢去解决一些疑难杂症，可能对于我来说，对于要求比较严格的echarts效果，短时间内找到配置参数，pdf文档的展示，手写轮播图效果，vue中的数据变化，视图不响应，等等。从这些问题中，慢慢的就锻炼出独立解决问题的能力，自己百度，自己消化。在这家公司工作之余，我又自己学习了node.js，搭建简单的服务进行登陆注册。"
+        },
+        {
+          title: "在南京信晨汇公司任职前端开发",
+          time: "2019.5-至今",
+          content:
+            "为什么同一家公司我还多加了一个分栏，因为在这段时间里，我实际的工作地点不是在这家公司，我被外派到，另外一家公司了，在这里，我在短短几个月，做了许多项目，百集后台（vue 全家桶）水肥作业（vue-全家通），移动端官网（适配）（等等 还涉及到一些react的项目，不过不是我一个人完全开发的，学习到一点react,以及redux使用，并且自制了简易的五子棋（react）了解了 DoraCMS的node部分，以及api文档的生成。"
         }
       ]
     };
@@ -300,9 +310,10 @@ export default {
   height: 100%;
   overflow: hidden;
   .resume_commons {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: inline-block;
+    min-height: 650px;
   }
   .resume_firstBlock {
     background: rgb(131, 175, 155);
@@ -326,6 +337,7 @@ export default {
     transition: all 1s;
     height: 100%;
     width: 100%;
+    min-height: 650px;
   }
   .controlButtonBox {
     position: absolute;
@@ -386,7 +398,7 @@ export default {
     }
   }
   .myHead_img {
-    margin: 10% auto;
+    margin: 25vh auto;
     margin-bottom: 0;
     width: 7rem;
     height: 7rem;
@@ -418,7 +430,7 @@ export default {
     display: inherit;
   }
   .resume_Block_title {
-    margin: 10% auto;
+    margin: 15vh auto;
     margin-bottom: 2rem;
     color: white;
     font-size: 1.3rem;
@@ -466,6 +478,8 @@ export default {
     font-size: 1rem;
     font-weight: 600;
     line-height: 2.5rem;
+    z-index: 1000;
+    position: relative;
   }
   .resume_thirdBlock_content {
     width: 50%;
@@ -706,8 +720,8 @@ export default {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 50%;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .resume_fifthBlock_demo {
     width: 10rem;
@@ -736,7 +750,14 @@ export default {
   .flyDemo {
     background-image: url("../../assets/fly.png");
   }
-  .resume_Block_fifth_content{
+  .ballFlay {
+    background-image: url("../../assets/ballFlay.png");
+  }
+  .ballFlay:hover {
+    color: #f4d03f;
+    transform: scale(1.3);
+  }
+  .resume_Block_fifth_content {
     color: white;
     font-size: 1rem;
   }
